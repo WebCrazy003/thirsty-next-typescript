@@ -1,0 +1,27 @@
+.itemWrapper {
+  display: flex;
+  height: 60px;
+  border-bottom: 2px solid #d8d8d8;
+  align-items: center;
+}
+
+.itemTitle {
+  font-size: 17px;
+}
+
+.avatarImg {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  margin-right: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.arrowIcon {
+  width: 10px;
+  position: absolute;
+  margin-top: 0px;
+  right: 26px;
+}
