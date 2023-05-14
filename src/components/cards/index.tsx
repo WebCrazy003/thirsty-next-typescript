@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Card } from "@components/css";
+import { Card } from "@components";
 import data from "@public/meta.json";
 import styles from "./index.module.css";
 

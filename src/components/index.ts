@@ -5,3 +5,6 @@ export { Footer } from "./footer";
 export { Header } from "./header";
 export { Logo } from "./logo";
 export { Main } from "./main";
+export { Layout } from "./layout";
+export { SearchInput } from "./search-input";
+export { ResultItem } from "./result-item";

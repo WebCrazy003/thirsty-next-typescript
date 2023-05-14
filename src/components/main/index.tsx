@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button } from "@components/css";
+import { Button } from "@components";
 
 export const Main: React.FC = () => {
   return (
