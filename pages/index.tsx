@@ -1,14 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-import {
-  Cards,
-  Footer,
-  Header,
-  Main,
-  Layout,
-  SearchInput,
-  ResultItem,
-} from "@components";
+import { Layout, SearchInput, ResultItem } from "@components";
 
 const Home: React.FC = () => {
   const [searchResult, setSearchResult] = useState([]);
@@ -20,7 +12,7 @@ const Home: React.FC = () => {
       `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchText}`,
     );
     const { drinks } = await response.json();
-    setSearchResult(drinks);
+    setSearchResult(drinks || []);
   };
 
   return (
@@ -29,10 +21,14 @@ const Home: React.FC = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          minHeight: "100vh",
+          maxHeight: "100vh",
         }}
       >
-        <SearchInput onChange={onInputChange} placeholder="Find a drink" />
+        <SearchInput
+          onChange={onInputChange}
+          placeholder="Find a drink"
+          defaultValue="mar"
+        />
         <div
           style={{
             overflowY: "auto",

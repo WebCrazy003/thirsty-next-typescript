@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 // import Image from "next/image";
 
 import styles from "./index.module.css";
 
-export const SearchInput: React.FC = ({ onChange, placeholder = "" }) => {
-  const [value, setValue] = useState("");
+type SearchInputProps = {
+  onChange: (e: string) => void;
+  defaultValue?: string;
+  placeholder?: string;
+};
 
-  const onChangeInput = (e) => {
+export const SearchInput: React.FC<SearchInputProps> = ({
+  onChange,
+  defaultValue = "",
+  placeholder = "",
+}) => {
+  const [value, setValue] = useState(defaultValue);
+
+  const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);
     setValue(e.target.value);
   };
@@ -15,6 +25,8 @@ export const SearchInput: React.FC = ({ onChange, placeholder = "" }) => {
     onChange?.("");
     setValue("");
   };
+
+  useEffect(() => onChange?.(value), []);
 
   return (
     <div className={styles.searchWrapper}>

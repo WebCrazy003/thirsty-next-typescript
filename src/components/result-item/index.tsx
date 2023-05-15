@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
 import styles from "./index.module.css";
 
-export const ResultItem: React.FC = ({ title, imgUrl }) => {
+type ResultItemProps = {
+  title: string;
+  imgUrl: string;
+};
+
+export const ResultItem: React.FC<ResultItemProps> = ({ title, imgUrl }) => {
   return (
     <div className={styles.itemWrapper}>
       <img src={imgUrl} className={styles.avatarImg} />
