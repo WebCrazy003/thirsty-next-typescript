@@ -9,6 +9,7 @@ import { Layout } from "@components";
 import styles from "@styles/drink.module.css";
 import type { DrinkType } from "@utils/types";
 import { getChartData, getIngredientList } from "@utils/util-functions";
+import { API_BASE } from "@utils/constants";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -112,9 +113,7 @@ export const getServerSideProps: GetServerSideProps<{
   const { params } = context;
   const { id } = params as { id: string };
 
-  const response = await fetch(
-    `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${id}`,
-  );
+  const response = await fetch(`${API_BASE}/search.php?s=${id}`);
 
   if (!response) return { props: {} };
 

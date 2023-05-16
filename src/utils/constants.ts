@@ -17,3 +17,5 @@ export const ounceConvertTable: { [key: string]: number } = {
   tblsp: 0.5,
   tbsp: 0.5,
 };
+
+export const API_BASE = "https://www.thecocktaildb.com/api/json/v1/1";

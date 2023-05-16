@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Layout, SearchInput, ResultItem } from "@components";
 import styles from "@styles/drink.module.css";
 import { useDebounce } from "@utils/hooks";
+import { API_BASE } from "@utils/constants";
 
 const Home: React.FC = () => {
   const [searchResult, setSearchResult] = useState([]);
@@ -12,7 +13,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     const getResult = async () => {
       const response = await fetch(
-        `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${debouncedValue}`,
+        `${API_BASE}/search.php?s=${debouncedValue}`,
       );
       const { drinks } = await response.json();
       setSearchResult(drinks || []);
