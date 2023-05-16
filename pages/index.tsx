@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { Layout, SearchInput, ResultItem } from "@components";
+import styles from "@styles/drink.module.css";
 
 const Home: React.FC = () => {
   const [searchResult, setSearchResult] = useState([]);
-
-  console.log("searchResult:", searchResult);
 
   const onInputChange = async (searchText: string) => {
     const response = await fetch(
@@ -17,24 +16,13 @@ const Home: React.FC = () => {
 
   return (
     <Layout pageTitle="Thirsty">
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          maxHeight: "100vh",
-        }}
-      >
+      <div className={styles.listWrapper}>
         <SearchInput
           onChange={onInputChange}
           placeholder="Find a drink"
-          defaultValue="mar"
+          defaultValue=""
         />
-        <div
-          style={{
-            overflowY: "auto",
-            maxHeight: "calc(100vh - 120px)",
-          }}
-        >
+        <div className={styles.itemList}>
           {searchResult.map(({ strDrink, strDrinkThumb }) => (
             <ResultItem title={strDrink} imgUrl={strDrinkThumb} />
           ))}
