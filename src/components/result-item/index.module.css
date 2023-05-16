@@ -20,6 +20,10 @@
   margin-bottom: 10px;
 }
 
+.avatarImg img {
+  border-radius: 50%;
+}
+
 .arrowIcon {
   width: 10px;
   position: absolute;

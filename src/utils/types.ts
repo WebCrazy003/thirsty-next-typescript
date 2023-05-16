@@ -1,6 +1,7 @@
 export type DrinkType = {
   strDrink: string;
   strDrinkThumb: string;
+  strInstructions: string;
 
   [key: string]: string;
 };

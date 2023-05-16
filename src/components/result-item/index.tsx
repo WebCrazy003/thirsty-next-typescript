@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import styles from "./index.module.css";
 
@@ -13,7 +14,10 @@ export const ResultItem: React.FC<ResultItemProps> = ({ title, imgUrl }) => {
     <Link href={`/drink/${encodeURIComponent(title)}`}>
       <a className={styles.link}>
         <div className={styles.itemWrapper}>
-          <img src={imgUrl} className={styles.avatarImg} />
+          <div className={styles.avatarImg}>
+            <Image src={imgUrl} width={40} height={40} />
+          </div>
+
           <span className={styles.itemTitle}>{title}</span>
           <img
             src="/icons/arrow-right.svg"

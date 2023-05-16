@@ -9,6 +9,9 @@
   margin-top: 30px;
   width: 150px;
   height: 150px;
+}
+
+.detailImage img {
   border-radius: 50%;
 }
 
@@ -55,12 +58,20 @@
 }
 
 .listWrapper {
-  display: "flex";
-  flex-direction: "column";
-  max-height: "100vh";
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
 }
 
 .itemList {
-  overflow-y: "auto";
-  max-height: "calc(100vh - 120px)";
+  overflow-y: auto;
+  max-height: calc(100vh - 120px);
+}
+
+.instruction {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 17px;
 }

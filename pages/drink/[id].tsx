@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { useRouter } from "next/router";
 import { GetServerSideProps } from "next";
+import Image from "next/image";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 
@@ -26,7 +27,7 @@ const pieChartOptions = {
 const Detail: React.FC<DetailProps> = ({ drink }) => {
   const router = useRouter();
   const { id } = router.query;
-  const { strDrink, strDrinkThumb } = drink;
+  const { strDrink, strDrinkThumb, strInstructions } = drink;
 
   const ingredientList = useMemo(() => getIngredientList(drink), [drink]);
 
@@ -51,7 +52,9 @@ const Detail: React.FC<DetailProps> = ({ drink }) => {
   return (
     <Layout pageTitle={id as string} showNav={true}>
       <div className={styles.detailWrapper}>
-        <img src={strDrinkThumb} className={styles.detailImage} />
+        <div className={styles.detailImage}>
+          <Image src={strDrinkThumb} width={150} height={150} />
+        </div>
         <span className={styles.drinkTitle}>{strDrink}</span>
 
         <div className={styles.ingredientWrapper}>
@@ -86,6 +89,8 @@ const Detail: React.FC<DetailProps> = ({ drink }) => {
             </div>
           </div>
         </div>
+
+        <div className={styles.instruction}>{strInstructions}</div>
       </div>
     </Layout>
   );

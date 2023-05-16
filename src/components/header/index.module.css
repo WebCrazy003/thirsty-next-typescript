@@ -1,7 +1,7 @@
 .header {
   background-color: #f6f6f6;
   text-align: center;
-  height: 3.75rem;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +11,6 @@
 
 .headerNav {
   font-weight: normal;
-
   color: #2f7bf6;
   text-decoration: none;
 }
@@ -25,8 +24,8 @@
 
 .navWrapper {
   position: absolute;
-  left: 1rem;
-  top: 1.2rem;
+  left: 16px;
+  top: 19px;
   display: flex;
   flex-direction: row;
   align-items: center;
