@@ -80,12 +80,16 @@ const Detail: React.FC<DetailProps> = ({ drink }) => {
             </div>
 
             <div className={styles.ingredientChart}>
-              <Pie
-                data={data}
-                options={pieChartOptions}
-                width={120}
-                height={120}
-              />
+              {chartData && chartData.length ? (
+                <Pie
+                  data={data}
+                  options={pieChartOptions}
+                  width={120}
+                  height={120}
+                />
+              ) : (
+                <div>No chart data</div>
+              )}
             </div>
           </div>
         </div>
