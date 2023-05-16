@@ -26,6 +26,12 @@ superplate is a Next.js all-in-one project generator. Create your project with t
     yarn start
 ```
 
+### Starting Unit test
+
+```bash
+    yarn test
+```
+
 ## Learn More
 
 To learn more about **superplate**, please check out the [Documentation](https://github.com/pankod/superplate).

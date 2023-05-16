@@ -74,7 +74,11 @@ const Detail: React.FC<DetailProps> = ({ drink }) => {
                       marginRight: 5,
                     }}
                   ></span>
-                  <span>{`${name} (${quantity})`}</span>
+                  {name && (
+                    <span>
+                      {name} {quantity ? ` (${quantity})` : ""}
+                    </span>
+                  )}
                 </div>
               ))}
             </div>

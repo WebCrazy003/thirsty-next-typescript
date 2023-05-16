@@ -9,7 +9,7 @@ export const getIngredientList = (drink: DrinkType): IngredientType[] => {
     const name = drink[`strIngredient${i + 1}`];
     const quantity = drink[`strMeasure${i + 1}`];
 
-    if (name && quantity) {
+    if (name || quantity) {
       ingredientList.push({
         name,
         quantity,
